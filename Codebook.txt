@@ -1,0 +1,46 @@
+## MSDS-6306-Doing-Data-Science-Fall-2019- Project-1
+## Project member name: Seemant Srivastava
+## Document Name: Codebook
+## Document Purpose: To provide an overview of the variables used in the RMD file and serves the purpose of a data dictionary for the R code.
+
+## Packages used
+library(tidyr)
+library(plyr)
+library(dplyr)
+library(tidyverse) #package which reloads most of the tidy packages (ggplot2, dplyr, magrittr, lubridate, tidyr, etc.)
+library(ggthemes)
+library(plotly)
+library(GGally)
+library(caret)
+library(class)
+library(e1071) #package used for classification models k-NN and Naive Bayes
+library(mice)  #package used for imputation
+library(VIM)   #package used for plotting imputed values
+library(ggmap)
+library(maps)  #package used for getting united states maps information
+library(mapdata)
+library(sp)
+library(maptools)
+library(readr) 
+
+## Dataframes used
+beers # for capturing the Beers.csv file dataset 
+brews # for capturing the Breweries.csv file dataset 
+beersbrews # for capturing the merged dataset by combining beers and breweries datasets
+beersbreweriesimputedmice # for capturing the imputed data during computation while using mice and VIM packages
+beersbrewsimputed # for capturing the imputed data, which is the clean dataset and has all null values imputed, will be used in model
+beersbreweriesimputedIPAAle # includes the IPAOrAle classifier feature added to the imputed dataset
+beersbreweriesimputedIPAAleKNN # contains only the "IPA" or "Ale" beers in the dataset, used as input dataset for running the k-NN model & Naive Bayes model
+d # contains the beersbrews (combined) dataset for drawing additional useful inference from the data for Budweiser
+
+## Variables used
+train # holds training dataset after doing cross validation
+test # holds testing dataset after doing cross validation
+classifications # holds the IPAOrAle classifications on the train dataset using k-NN model
+CM # holds the confusionMatrix statistics after running the k-NN model
+AccHolder # holds the accuracy for the Naive Bayes model
+SensHolder # holds the sensitivity for the Naive Bayes model
+SpecHolder # holds the specificity for the Naive Bayes model
+
+## Note on Warning messages during the RMD execution
+All Warnings produced during RMD execution were reviewed dillegently and were found to be soft warnings and don't impact any results, and can safetly be ignored.
